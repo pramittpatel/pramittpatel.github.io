@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img">
+<title>Illustration: Microphone, sound wave, and a reply speech bubble</title>
+<style>
+  .flow { stroke-dasharray: 4 5; animation: flow 1.6s linear infinite; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes flow { to { stroke-dashoffset: -18; } }
+  @keyframes pulse { 50% { opacity: .3; } }
+  @media (prefers-reduced-motion: reduce) { .flow, .pulse { animation: none; } }
+</style>
+<!-- Background and grid -->
+<rect width="400" height="225" fill="#0f1626"/>
+<g stroke="#22304a"><line x1="0" y1="0" x2="0" y2="225"/><line x1="50" y1="0" x2="50" y2="225"/><line x1="100" y1="0" x2="100" y2="225"/><line x1="150" y1="0" x2="150" y2="225"/><line x1="200" y1="0" x2="200" y2="225"/><line x1="250" y1="0" x2="250" y2="225"/><line x1="300" y1="0" x2="300" y2="225"/><line x1="350" y1="0" x2="350" y2="225"/><line x1="400" y1="0" x2="400" y2="225"/><line x1="0" y1="0" x2="400" y2="0"/><line x1="0" y1="45" x2="400" y2="45"/><line x1="0" y1="90" x2="400" y2="90"/><line x1="0" y1="135" x2="400" y2="135"/><line x1="0" y1="180" x2="400" y2="180"/><line x1="0" y1="225" x2="400" y2="225"/></g>
+<!-- Drawing -->
+<rect x="40" y="82" width="26" height="46" rx="13" fill="#141b2d" stroke="#6CB4FF" stroke-width="2"/><path d="M30 118a23 23 0 0 0 46 0M53 141v16M41 157h24" stroke="#6CB4FF" stroke-width="2" fill="none" stroke-linecap="round"/>
+<rect x="100" y="104.0" width="5" height="8.0" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="111" y="75.1" width="5" height="65.8" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="122" y="88.5" width="5" height="39.0" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="133" y="83.4" width="5" height="49.2" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="144" y="77.5" width="5" height="61.0" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="155" y="97.5" width="5" height="21.0" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="166" y="74.0" width="5" height="68.0" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="177" y="94.4" width="5" height="27.2" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="188" y="79.2" width="5" height="57.6" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="199" y="81.1" width="5" height="53.8" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="210" y="91.4" width="5" height="33.2" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="221" y="74.4" width="5" height="67.2" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="232" y="100.8" width="5" height="14.4" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="243" y="76.1" width="5" height="63.8" rx="2.5" fill="#6CB4FF" opacity=".75"/>
+<path class="flow" d="M258 108h14" stroke="#6CB4FF" fill="none"/><rect x="278" y="68" width="100" height="62" rx="14" fill="#141b2d" stroke="#6CB4FF" stroke-width="2"/><path d="M298 130l-6 16 22-16" fill="#141b2d" stroke="#6CB4FF" stroke-width="2" stroke-linejoin="round"/>
+<g fill="#6CB4FF"><circle class="pulse" cx="308" cy="99" r="4"/><circle class="pulse" style="animation-delay:.4s" cx="328" cy="99" r="4"/><circle class="pulse" style="animation-delay:.8s" cx="348" cy="99" r="4"/></g>
+</svg>

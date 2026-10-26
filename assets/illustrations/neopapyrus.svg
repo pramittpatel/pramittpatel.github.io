@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img">
+<title>Illustration: Stack of research papers feeding two debating speech bubbles and a balance scale</title>
+<style>
+  .flow { stroke-dasharray: 4 5; animation: flow 1.6s linear infinite; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes flow { to { stroke-dashoffset: -18; } }
+  @keyframes pulse { 50% { opacity: .3; } }
+  @media (prefers-reduced-motion: reduce) { .flow, .pulse { animation: none; } }
+</style>
+<!-- Background and grid -->
+<rect width="400" height="225" fill="#0f1626"/>
+<g stroke="#22304a"><line x1="0" y1="0" x2="0" y2="225"/><line x1="50" y1="0" x2="50" y2="225"/><line x1="100" y1="0" x2="100" y2="225"/><line x1="150" y1="0" x2="150" y2="225"/><line x1="200" y1="0" x2="200" y2="225"/><line x1="250" y1="0" x2="250" y2="225"/><line x1="300" y1="0" x2="300" y2="225"/><line x1="350" y1="0" x2="350" y2="225"/><line x1="400" y1="0" x2="400" y2="225"/><line x1="0" y1="0" x2="400" y2="0"/><line x1="0" y1="45" x2="400" y2="45"/><line x1="0" y1="90" x2="400" y2="90"/><line x1="0" y1="135" x2="400" y2="135"/><line x1="0" y1="180" x2="400" y2="180"/><line x1="0" y1="225" x2="400" y2="225"/></g>
+<!-- Drawing -->
+<rect x="34" y="58" width="56" height="74" rx="5" fill="#1a2338" stroke="#3f5a85"/><rect x="26" y="68" width="56" height="74" rx="5" fill="#1a2338" stroke="#3f5a85"/><rect x="18" y="78" width="56" height="74" rx="5" fill="#141b2d" stroke="#6CB4FF" stroke-width="2"/><path d="M28 96h36M28 108h36M28 120h28M28 132h32" stroke="#3f5a85" stroke-linecap="round"/>
+<path class="flow" d="M100 112h30" stroke="#6CB4FF" fill="none"/>
+<rect x="138" y="52" width="112" height="52" rx="12" fill="#141b2d" stroke="#6CB4FF" stroke-width="2"/><path d="M158 104l-4 14 16-14" fill="#141b2d" stroke="#6CB4FF" stroke-width="2" stroke-linejoin="round"/><path d="M154 70h80M154 86h56" stroke="#3f5a85" stroke-linecap="round"/>
+<rect x="176" y="124" width="112" height="52" rx="12" fill="#141b2d" stroke="#3f5a85" stroke-width="2"/><path d="M268 124l4-14-16 14" fill="#141b2d" stroke="#3f5a85" stroke-width="2" stroke-linejoin="round"/><path d="M192 142h80M192 158h50" stroke="#3f5a85" stroke-linecap="round"/>
+<path class="flow" d="M296 112h18" stroke="#6CB4FF" fill="none"/>
+<g stroke="#6CB4FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M352 72v86M334 158h36M322 84h60"/><path d="M322 84l-12 30h24zM382 84l-12 30h24z" fill="#141b2d"/></g><circle cx="352" cy="72" r="5" fill="#6CB4FF"/>
+</svg>

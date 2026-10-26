@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Site icon: the letter "p" and an accent dot, matching the "pramit.patel" logo -->
+  <rect width="64" height="64" rx="14" fill="#0d1220"/>
+  <text x="14" y="44" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#eef3fb">p</text>
+  <circle cx="46" cy="42" r="5" fill="#6cb4ff"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img">
+<title>Illustration: Smartwatch sending out haptic pulses next to an audio waveform</title>
+<style>
+  .flow { stroke-dasharray: 4 5; animation: flow 1.6s linear infinite; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes flow { to { stroke-dashoffset: -18; } }
+  @keyframes pulse { 50% { opacity: .3; } }
+  @media (prefers-reduced-motion: reduce) { .flow, .pulse { animation: none; } }
+</style>
+<!-- Background and grid -->
+<rect width="400" height="225" fill="#0f1626"/>
+<g stroke="#22304a"><line x1="0" y1="0" x2="0" y2="225"/><line x1="50" y1="0" x2="50" y2="225"/><line x1="100" y1="0" x2="100" y2="225"/><line x1="150" y1="0" x2="150" y2="225"/><line x1="200" y1="0" x2="200" y2="225"/><line x1="250" y1="0" x2="250" y2="225"/><line x1="300" y1="0" x2="300" y2="225"/><line x1="350" y1="0" x2="350" y2="225"/><line x1="400" y1="0" x2="400" y2="225"/><line x1="0" y1="0" x2="400" y2="0"/><line x1="0" y1="45" x2="400" y2="45"/><line x1="0" y1="90" x2="400" y2="90"/><line x1="0" y1="135" x2="400" y2="135"/><line x1="0" y1="180" x2="400" y2="180"/><line x1="0" y1="225" x2="400" y2="225"/></g>
+<!-- Drawing -->
+<circle class="pulse" cx="250" cy="112" r="62" fill="none" stroke="#6CB4FF" stroke-opacity="0.55" style="animation-delay:0.0s"/><circle class="pulse" cx="250" cy="112" r="82" fill="none" stroke="#6CB4FF" stroke-opacity="0.4" style="animation-delay:0.5s"/><circle class="pulse" cx="250" cy="112" r="102" fill="none" stroke="#6CB4FF" stroke-opacity="0.25" style="animation-delay:1.0s"/>
+<rect x="232" y="40" width="36" height="32" rx="6" fill="#1a2338"/><rect x="232" y="152" width="36" height="32" rx="6" fill="#1a2338"/><rect x="212" y="68" width="76" height="90" rx="20" fill="#141b2d" stroke="#6CB4FF" stroke-width="2"/><path d="M232 128q18-40 36-8" stroke="#6CB4FF" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="268" cy="120" r="4" fill="#6CB4FF"/>
+<rect x="24" y="108.0" width="5" height="8.0" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="35" y="68.3" width="5" height="87.4" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="46" y="97.8" width="5" height="28.4" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="57" y="71.0" width="5" height="82.0" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="68" y="88.2" width="5" height="47.6" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="79" y="76.1" width="5" height="71.8" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="90" y="80.0" width="5" height="64.0" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="101" y="83.3" width="5" height="57.4" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="112" y="73.6" width="5" height="76.8" rx="2.5" fill="#6CB4FF" opacity=".75"/><rect x="123" y="92.1" width="5" height="39.8" rx="2.5" fill="#6CB4FF" opacity=".75"/>
+</svg>

@@ -1,379 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pramit Patel | Machine Learning and Software Engineering</title>
-<meta name="description" content="Pramit Patel is a Computer Science student at the University of North Georgia focused on machine learning, applied AI, and software engineering.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0d1220;--sf:#141b2d;--sf2:#1a2338;--tx:#EEF3FB;--mu:#98a3b8;--ac:#6CB4FF;--bd:#27324a;--r:14px;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.65 Geist,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:6px}
-.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
-.mono{font-family:"Geist Mono",ui-monospace,Menlo,monospace}
-h1,h2,h3{line-height:1.08;letter-spacing:-.03em;margin:0}
-h2{font-size:clamp(28px,4vw,42px);font-weight:700}
-section{padding:96px 0}
-.lead{color:var(--mu);max-width:62ch}
-/* header */
-header.top{position:sticky;top:0;z-index:20;background:rgba(13,18,32,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);padding-top:env(safe-area-inset-top,0px)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(13,18,32,.82);z-index:30}
-.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.mark{font-weight:700;letter-spacing:-.02em}
-.mark i{font-style:normal;color:var(--ac)}
-nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
-nav a.l{padding:8px 12px;border-radius:8px;color:var(--mu);font-size:14px;transition:color .2s,background .2s}
-nav a.l:hover,nav a.l.on{color:var(--tx);background:var(--sf)}
-nav a.l.on{box-shadow:inset 0 -2px 0 var(--ac)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--bd);transition:transform .2s,background .2s,border-color .2s;cursor:pointer;background:transparent;color:var(--tx);font-family:inherit}
-.btn:hover{transform:translateY(-2px);border-color:var(--ac)}
-.btn.p{background:var(--ac);color:#06111f;border-color:var(--ac)}
-.btn.p:hover{background:#8cc6ff}
-.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed;border-style:dashed}
-.btn[aria-disabled=true]:hover{transform:none;border-color:var(--bd)}
-#menu{display:none;width:44px;height:44px;padding:0;justify-content:center}
-@media(max-width:820px){
-#menu{display:inline-flex}
-nav ul{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--bg);border-bottom:1px solid var(--bd);padding:10px 20px 18px;display:none}
-nav ul.open{display:flex}
-nav a.l{display:block;padding:14px 12px;font-size:16px}
-section{padding:72px 0}}
-/* hero */
-.hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;padding:56px 0;overflow:hidden;border-bottom:1px solid var(--bd)}
-#net{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 8%,rgba(13,18,32,.55) 55%,rgba(13,18,32,0) 100%);pointer-events:none}
-.hero .wrap{position:relative;z-index:2}
-.hero h1{font-size:clamp(40px,8vw,92px);font-weight:800;max-width:13ch;letter-spacing:-.045em}
-.hero h1 span{display:block;color:var(--mu);font-weight:600}
-.hero p{font-size:clamp(17px,2vw,20px);color:var(--mu);max-width:54ch;margin:28px 0 36px}
-.hero p b{color:var(--tx);font-weight:500}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:44px;font-size:13px;color:var(--mu)}
-.meta span::before{content:"";display:inline-block;width:6px;height:6px;background:var(--ac);border-radius:50%;margin-right:9px;vertical-align:middle}
-.in{opacity:0;transform:translateY(14px);animation:in .8s cubic-bezier(.2,.7,.2,1) forwards}
-.in:nth-child(2){animation-delay:.12s}.in:nth-child(3){animation-delay:.24s}.in:nth-child(4){animation-delay:.36s}.in:nth-child(5){animation-delay:.48s}
-@keyframes in{to{opacity:1;transform:none}}
-.hero h1{max-width:none;font-size:clamp(38px,6.5vw,78px)}
-.hgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-@media(max-width:900px){.hgrid{grid-template-columns:1fr 38%;gap:12px 16px;align-items:center}.hgrid>div:first-child{display:contents}.hero h1{grid-column:1;grid-row:1;font-size:clamp(30px,9vw,56px)}.hero h1 span{font-size:.42em;margin-top:10px;letter-spacing:-.02em}.photo{grid-column:2;grid-row:1;width:100%}.hero p,.hero .cta,.hero .soc,.hero .meta{grid-column:1/-1}}
-.photo{position:relative;aspect-ratio:1;width:min(100%,410px);justify-self:center}
-.photo img{position:absolute;inset:9%;width:82%;height:82%;border-radius:50%;object-fit:cover;border:2px solid var(--bd);z-index:2;box-shadow:0 0 90px rgba(108,180,255,.2)}
-.orbit{position:absolute;inset:0;width:100%;height:100%;animation:spin 40s linear infinite}
-.orbit.r2{animation-duration:65s;animation-direction:reverse}
-@keyframes spin{to{transform:rotate(360deg)}}
-.chip{position:absolute;z-index:3;font-size:12px;padding:6px 11px;border-radius:999px;background:rgba(20,27,45,.94);border:1px solid var(--bd);animation:fl 6s ease-in-out infinite}
-@keyframes fl{50%{transform:translateY(-8px)}}
-.soc{display:flex;gap:10px;margin-top:28px}
-.soc a{width:44px;height:44px;border-radius:50%;border:1px solid var(--bd);display:grid;place-items:center;color:var(--mu);transition:color .2s,border-color .2s,transform .2s}
-.soc a:hover{color:var(--ac);border-color:var(--ac);transform:translateY(-3px)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{border-top:1px solid var(--bd);padding-top:16px}
-.stat b{font-size:clamp(34px,5vw,56px);letter-spacing:-.04em;display:block;line-height:1;color:var(--ac)}
-.stat small{color:var(--mu)}
-#prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--ac);z-index:40}
-.fl{stroke-dasharray:4 5;animation:dash 1.6s linear infinite}
-@keyframes dash{to{stroke-dashoffset:-18}}
-.pu{animation:pu 2.4s ease-in-out infinite}
-@keyframes pu{50%{opacity:.3}}
-/* projects */
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-@media(max-width:820px){.grid{grid-template-columns:1fr}}
-.card{position:relative;display:flex;flex-direction:column;background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;transition:transform .25s ease,border-color .25s;transform-style:preserve-3d;will-change:transform}
-.card:hover{border-color:#3f5a85}
-.card::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(108,180,255,.11),transparent 60%)}
-.card:hover::before{opacity:1}
-.cover{aspect-ratio:16/9;position:relative;background:#0f1626;border-bottom:1px solid var(--bd);overflow:hidden}
-.cover img{width:100%;height:100%;object-fit:cover;display:block}
-.cover svg{position:absolute;inset:0;width:100%;height:100%}
-.ph{position:absolute;left:12px;bottom:12px;font-size:11px;padding:4px 9px;border:1px dashed #4f6385;border-radius:6px;color:#a9b7cf;background:rgba(13,18,32,.75)}
-.cbody{padding:24px;display:flex;flex-direction:column;gap:14px;flex:1}
-.cat{font-size:13px;color:var(--ac)}
-.card h3{font-size:24px}
-.card p{margin:0;color:var(--mu);font-size:15px}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:12px;padding:4px 10px;border:1px solid var(--bd);border-radius:999px;color:#c6cfe0}
-.hl{display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--bd);margin-top:auto}
-.hl b{font-size:22px;color:var(--ac);font-weight:700}
-.hl small{color:var(--mu);font-size:13px}
-.card .more{font-weight:600;font-size:15px}
-.card .more::after{content:"";position:absolute;inset:0;z-index:2}
-/* about / skills / exp */
-.two{display:grid;grid-template-columns:1.2fr 1fr;gap:56px}
-@media(max-width:820px){.two{grid-template-columns:1fr;gap:32px}}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fact{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:20px}
-.fact b{display:block;font-size:30px;letter-spacing:-.03em}
-.fact small{color:var(--mu)}
-.tl{border-left:1px solid var(--bd);margin-left:6px}
-.job{position:relative;padding:0 0 40px 32px}
-.job::before{content:"";position:absolute;left:-6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--ac)}
-.job .when{font-size:13px;color:var(--mu)}
-.job h3{font-size:21px;margin:6px 0 2px}
-.job ul{margin:12px 0 0;padding-left:18px;color:var(--mu);max-width:70ch}
-.job li{margin:6px 0}
-.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-@media(max-width:820px){.skills{grid-template-columns:1fr}}
-.sk{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:24px}
-.sk h3{font-size:18px;margin-bottom:14px}
-.contact{text-align:left}
-.contact h2{font-size:clamp(34px,6vw,64px);max-width:16ch}
-.contact .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-footer{border-top:1px solid var(--bd);padding:32px 0;color:var(--mu);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.note{font-size:13px;color:#c9b97a;border:1px dashed #6b6238;border-radius:8px;padding:10px 14px;max-width:70ch}
-/* detail */
-#detail{display:none;padding:40px 0 96px}
-.crumb{font-size:14px;color:var(--mu);margin-bottom:28px}
-.crumb a:hover{color:var(--ac)}
-#detail h1{font-size:clamp(34px,6vw,64px);font-weight:800;letter-spacing:-.04em;margin:10px 0 18px}
-.mets{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:32px 0}
-.met{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
-.met b{font-size:28px;color:var(--ac);display:block;letter-spacing:-.02em}
-.met small{color:var(--mu);display:block}
-.met em{font-style:normal;font-size:12px;color:#c9b97a}
-.sec{max-width:68ch;margin-top:44px}
-.sec h2{font-size:26px;margin-bottom:12px}
-.sec p{color:#d0d7e6;margin:0 0 12px}
-.sec ul{color:#d0d7e6;padding-left:20px}
-.pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:72px}
-.pn a{border:1px solid var(--bd);border-radius:var(--r);padding:18px;background:var(--sf);transition:border-color .2s}
-.pn a:hover{border-color:var(--ac)}
-.pn small{color:var(--mu);display:block}
-.pn a:last-child{text-align:right}
-@media(max-width:600px){.pn{grid-template-columns:1fr}.pn a:last-child{text-align:left}}
-.rv{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
-.rv.show{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.in,.rv{animation:none;opacity:1;transform:none;transition:none}.card,.btn{transition:none}.orbit,.chip,.fl,.pu{animation:none}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Search and sharing details (shown on Google and in link previews) -->
+  <title>Pramit Patel | Machine Learning and Software Engineering</title>
+  <meta name="description" content="Pramit Patel is a Computer Science student at the University of North Georgia focused on machine learning, applied AI, and software engineering.">
+  <link rel="canonical" href="https://pramittpatel.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pramittpatel.github.io/">
+  <meta property="og:title" content="Pramit Patel | Machine Learning and Software Engineering">
+  <meta property="og:description" content="Computer Science student at the University of North Georgia building machine learning models and AI applications.">
+  <meta property="og:image" content="https://pramittpatel.github.io/assets/profile.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles: all colors, fonts and layout live in css/styles.css -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Scripts ("defer" means they run after the page has loaded, in this order) -->
+  <script src="js/projects-data.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/effects.js" defer></script>
 </head>
 <body>
-<div id="prog" aria-hidden="true"></div>
-<header class="top"><div class="wrap bar">
-<a class="mark" href="#home" aria-label="Pramit Patel, home">pramit<i>.</i>patel</a>
-<nav aria-label="Primary">
-<button id="menu" class="btn" aria-expanded="false" aria-controls="navlist" aria-label="Toggle menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-<ul id="navlist">
-<li><a class="l" href="#home">Home</a></li><li><a class="l" href="#projects">Projects</a></li><li><a class="l" href="#about">About</a></li><li><a class="l" href="#experience">Experience</a></li><li><a class="l" href="#skills">Skills</a></li><li><a class="l" href="#contact">Contact</a></li>
-</ul></nav>
-<span id="resumeSlot"></span>
-</div></header>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-<main id="home-view">
-<div class="hero" id="home">
-<canvas id="net" aria-hidden="true"></canvas>
-<div class="wrap">
-<div class="hgrid"><div>
-<h1 class="in">Hi, I’m Pramit<span>AI &amp; Machine Learning Engineering</span></h1>
-<p class="in">I’m <b>Pramit Patel</b>, a Computer Science student specializing in machine learning and applied AI. I build predictive models, AI-powered applications, and software that solves practical problems.</p>
-<div class="cta in"><a class="btn p" href="#projects">View projects</a><span id="heroResume"></span><a class="btn" href="#contact">Contact me</a></div>
-<div class="soc in" id="soc"></div>
-<div class="meta in mono"><span>Computer Science</span><span>Machine Learning minor</span><span>University of North Georgia</span></div>
-</div>
-<div class="photo in">
-<svg class="orbit" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" fill="none" stroke="#6CB4FF" stroke-opacity=".4" stroke-width=".4" stroke-dasharray="1.5 2.5"/><circle cx="50" cy="1" r="1.7" fill="#6CB4FF"/></svg>
-<svg class="orbit r2" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="#6CB4FF" stroke-opacity=".2" stroke-width=".4"/><circle cx="94" cy="50" r="1.3" fill="#6CB4FF"/><circle cx="28" cy="88" r="1" fill="#6CB4FF" opacity=".6"/></svg>
-<img src="assets/profile.png" alt="Portrait of Pramit Patel wearing glasses and a navy blazer">
-</div>
-</div></div></div>
+  <!-- ================= HEADER AND NAVIGATION ================= -->
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="#home" aria-label="Pramit Patel, home">pramit<span>.</span>patel</a>
 
-<section style="padding:56px 0"><div class="wrap stats rv">
-<div class="stat"><b data-to="4.0" data-d="1">4.0</b><small>GPA at UNG</small></div>
-<div class="stat"><b data-to="65" data-s="+">65+</b><small>credit hours completed</small></div>
-<div class="stat"><b data-to="50" data-s="+">50+</b><small>algorithm problems solved</small></div>
-<div class="stat"><b data-to="4">4</b><small>projects built</small></div>
-</div></section>
-<section id="projects"><div class="wrap">
-<div class="head"><div><h2>Projects</h2><p class="lead" style="margin:12px 0 0">Four projects across machine learning, accessibility, voice interfaces, and database systems.</p></div></div>
-<div class="grid" id="grid"></div>
-</div></section>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="btn menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="visually-hidden">Menu</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-<section id="about" style="background:var(--sf);border-block:1px solid var(--bd)"><div class="wrap two rv">
-<div><h2 style="margin-bottom:24px">About</h2>
-<p class="lead" style="font-size:18px">I’m a Computer Science student at the University of North Georgia focused on machine learning, applied AI, and software engineering. I enjoy taking problems from raw data and initial ideas through implementation, experimentation, and evaluation.</p>
-<p class="lead">I’m interested in building useful AI systems while developing strong software engineering fundamentals, and in applied AI and ML research.</p></div>
-<div class="facts">
-<div class="fact"><b>B.S.</b><small>Computer Science</small></div>
-<div class="fact"><b>Minor</b><small>Machine Learning</small></div>
-<div class="fact"><b>4.0</b><small>GPA, 65+ credit hours</small></div>
-<div class="fact"><b>May 2028</b><small>Expected graduation</small></div>
-</div></div></section>
+      <!-- TO UPDATE YOUR RESUME: Replace assets/resume.pdf with your new PDF, keeping the same filename. The download link will continue to work. -->
+      <a class="btn btn-small" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </header>
 
-<section id="experience"><div class="wrap rv">
-<h2 style="margin-bottom:44px">Experience</h2>
-<div class="tl">
-<div class="job"><div class="when mono">October 2026 to present</div><h3>AI Lab Member</h3><div class="lead">University of North Georgia, AI Lab</div>
-<ul><li>Conduct exploratory data analysis on 3+ research datasets and train predictive machine learning models in Python alongside faculty and lab peers.</li><li>Design and run experimental workflows using Scikit-learn and PyTorch, evaluating classification and regression metrics.</li><li>Document experimental findings and take part in weekly peer code reviews.</li></ul></div>
-<div class="job"><div class="when mono">June 2026 to present</div><h3>Software Engineering Club Member</h3><div class="lead">University of North Georgia</div>
-<ul><li>Solved and optimized 50+ algorithmic problems in Python and Java, analyzing time complexity (Big-O) and memory use.</li><li>Join bi-weekly coding sessions on object-oriented design, modular architecture, and peer code review.</li><li>Use Git and GitHub for team version control, including branching and merge conflicts.</li></ul></div>
-<div class="job"><div class="when mono">March 2025 to present</div><h3>Customer Service Associate</h3><div class="lead">RaceTrac</div>
-<ul><li>Process high volumes of point-of-sale transactions and manage inventory tracking and replenishment while working with store associates.</li></ul></div>
-</div></div></section>
+  <main id="main">
+    <!-- The home page. Hidden by js/main.js while a single project is open. -->
+    <div id="home-view">
 
-<section id="skills" style="background:var(--sf);border-block:1px solid var(--bd)"><div class="wrap rv">
-<h2 style="margin-bottom:44px">Skills</h2><div class="skills" id="skillGrid"></div></div></section>
+      <!-- ================= HERO (INTRODUCTION) ================= -->
+      <section class="hero" id="home" aria-label="Introduction">
+        <canvas class="hero-network" id="hero-network" aria-hidden="true"></canvas>
+        <div class="container hero-grid">
 
-<section id="contact"><div class="wrap contact rv">
-<h2>Have an interesting problem to solve?</h2>
-<p class="lead" style="margin-top:20px">I’m interested in AI/ML opportunities, software engineering internships, research, and collaborations on useful technology.</p>
-<div class="links"><a class="btn p" href="mailto:pramittejaspatel@icloud.com">pramittejaspatel@icloud.com</a><span id="contactLinks"></span></div>
-</div></section>
-</main>
+          <!-- EDIT YOUR INTRODUCTION HERE -->
+          <h1 class="hero-heading fade-in">Hi, I’m Pramit<span>AI &amp; Machine Learning Engineering</span></h1>
 
-<main id="detail"><div class="wrap" id="detailBody"></div></main>
+          <div class="hero-body">
+            <p class="hero-intro fade-in delay-1">I’m <strong>Pramit Patel</strong>, a Computer Science student at the University of North Georgia specializing in machine learning and applied AI. I build predictive models, AI-powered applications, and software that solves practical problems.</p>
 
-<footer><div class="wrap"><span>© <span id="yr"></span> Pramit Patel</span><span id="footLinks"></span></div></footer>
+            <div class="button-row fade-in delay-2">
+              <a class="btn btn-primary" href="#projects">View projects</a>
+              <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">View resume</a>
+              <a class="btn" href="#contact">Contact me</a>
+            </div>
 
-<script>
-/* ===== CONTENT: edit here. Links left null are hidden or shown as clearly marked placeholders. ===== */
-const SITE={email:"pramittejaspatel@icloud.com",github:"https://github.com/pramittpatel",linkedin:"https://www.linkedin.com/in/pramit-patel-91a016389/",resume:null /* set to "resume.pdf" once the file is hosted next to this page */};
-const SKILLS={"Programming":["Python","Java","SQL","HTML","CSS"],"Machine learning and data science":["Scikit-learn","TensorFlow","PyTorch","Pandas","NumPy","Matplotlib","Seaborn","Data cleaning","Feature engineering","Model evaluation"],"Software engineering":["Object-oriented programming","Data structures and algorithms","REST APIs","Debugging","Unit testing"],"Tools":["Git","GitHub","VS Code","Anaconda"]};
-const PROJECTS=[
-{slug:"car-insurance-claim-prediction",title:"Car Insurance Claim Prediction",category:"Machine Learning / Predictive Modeling",short:"An end-to-end machine learning pipeline for insurance claim prediction, from structured data preprocessing to model evaluation.",tech:["Python","Scikit-learn","Pandas","NumPy","Matplotlib"],featured:true,order:1,github:null,demo:null,cover:null,
- metrics:[{v:"0.85+",l:"ROC-AUC",note:"Resume-reported; verify against evaluation output"},{v:"10,000+",l:"structured records"},{v:"15+",l:"feature columns"}],
- sections:[
- {h:"Overview",p:["The goal is to estimate insurance claim probabilities from structured tabular data, covering the full path from raw records to an evaluated model."]},
- {h:"Problem",p:["Claim prediction is a classification task where claims are typically much rarer than non-claims, so accuracy alone can mislead. Predictions need to be evaluated with metrics that reflect that imbalance, such as ROC-AUC and precision-recall."]},
- {h:"Data preprocessing",list:["Missing-value imputation","Categorical one-hot encoding","Feature scaling","Class imbalance handled with class weights"]},
- {h:"Model development",p:["A Random Forest classifier with class-weight balancing, trained inside an end-to-end pipeline that applies the same preprocessing to every record."]},
- {h:"Evaluation",p:["The reported ROC-AUC is 0.85+, and performance was also evaluated with precision-recall metrics. This figure comes from the resume and is shown as resume-reported until it is confirmed against the actual evaluation output."],ph:"Add ROC curve, precision-recall curve, confusion matrix, and feature importance charts generated from the real run."},
- {h:"Limitations",p:["Predictive performance depends on data quality, class balance, the validation strategy, and how well the model generalizes to unseen data."]},
- {h:"Future improvements",p:["Possible future work, not completed: probability calibration, cross-validated hyperparameter tuning, and comparison against gradient-boosted models."]}]},
-{slug:"aurabeat",title:"AuraBeat",category:"Accessibility Technology / Applied AI",short:"An accessibility-focused wearable prototype exploring gesture input, synchronized haptic feedback, and voice assistant integration.",tech:["React","TypeScript","watchOS","Python","ElevenLabs API"],featured:true,order:2,github:null,demo:null,cover:null,
- metrics:[{v:"36 hrs",l:"hackathon build, Hacklanta II (October 2026)"},{v:"60 Hz",l:"wrist gesture capture"},{v:"4",l:"customizable sensory toggles"}],
- sections:[
- {h:"The accessibility problem",p:["Live events are built around audio, which leaves people with hearing impairments with less access to the experience."]},
- {h:"Product concept",p:["A watchOS app that captures real-time wrist gestures and outputs haptic feedback synchronized with live audio, designed to improve event accessibility for hearing-impaired users."]},
- {h:"Systems covered",list:["Gesture processing: wrist gestures captured at 60 Hz","Haptic feedback synchronized with live audio","Voice assistant: Python-backed ElevenLabs API integration","Four customizable sensory toggles"]},
- {h:"Recognition",p:["The team presented a functional end-to-end prototype to a panel of 20+ judges, competing against 250+ student teams. These figures are resume-provided."]},
- {h:"My specific contributions",note:"Team project. Add the parts you personally built here before publishing, so the page does not imply you built all of it."},
- {h:"Limitations",p:["This is a hackathon prototype. It has not been commercially released or clinically validated."]}],ph:"Add real app screenshots, hackathon photos, or demo footage."},
-{slug:"voice-activated-ai-assistant",title:"Voice-Activated AI Assistant",category:"Applied AI / Voice Interfaces",short:"A hands-free voice assistant that connects audio capture, speech recognition, AI responses, and text-to-speech.",tech:["Python","OpenAI API","Whisper","Pyttsx3","SoundDevice"],featured:true,order:3,github:null,demo:null,cover:null,
- metrics:[{v:"< 2 s",l:"latency",note:"Resume-reported"},{v:"16 kHz",l:"real-time audio capture"},{v:"4",l:"modular Python scripts"}],
- sections:[
- {h:"User problem",p:["A desktop assistant you can use hands-free, without typing."]},
- {h:"Pipeline",list:["Audio capture: real-time input at 16 kHz with SoundDevice","Speech recognition: OpenAI’s Whisper model","Response generation: OpenAI API","Text-to-speech: Pyttsx3"]},
- {h:"Modular architecture and error handling",p:["The code is structured as four modular Python scripts, with custom exception handling for API calls, speech recognition, and response generation."]},
- {h:"Performance",p:["End-to-end latency is reported at under two seconds. Add measured timings per stage once recorded."],ph:"Add a demo recording or an audio pipeline diagram that matches the real code."},
- {h:"Future improvements",p:["Possible future work: wake-word detection, streaming responses, and conversation memory."]}]},
-{slug:"java-inventory-management-system",title:"Java Inventory Management System",category:"Software Engineering / Database Systems",short:"An object-oriented inventory management application backed by a relational database, with a focus on data integrity and query performance.",tech:["Java","SQL","MySQL"],featured:true,order:4,github:null,demo:null,cover:null,
- metrics:[{v:"1,000+",l:"inventory records managed"},{v:"~20%",l:"faster average query time",note:"Resume-reported; add benchmark method"},{v:"15+",l:"SQL queries and indexes written and optimized"}],
- sections:[
- {h:"Application overview",p:["An object-oriented desktop application that manages relational inventory records using MySQL."]},
- {h:"Database and queries",p:["Wrote and optimized 15+ relational SQL queries and table indexes, reducing average query execution time by about 20% as reported on the resume."]},
- {h:"Validation and error handling",p:["Input validation and error-handling checks across the forms protect data integrity and prevent runtime crashes."],ph:"Add real interface screenshots or a database schema diagram."},
- {h:"Future improvements",p:["Possible future work: automated unit tests for the data layer and documented query benchmarks."]}]}
-];
+            <!-- UPDATE YOUR CONTACT LINKS HERE (these icons, and the buttons in the Contact section below) -->
+            <div class="social-links fade-in delay-3">
+              <a href="https://github.com/pramittpatel" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/pramit-patel-91a016389/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5v11.5z"/></svg>
+              </a>
+              <a href="mailto:pramittejaspatel@icloud.com" aria-label="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </a>
+            </div>
 
-/* ===== RENDERING: no need to edit below to add a project ===== */
-const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const sorted=()=>[...PROJECTS].sort((a,b)=>(b.featured?1:0)-(a.featured?1:0)||(a.order??999)-(b.order??999));
-const link=(u,t,cls="btn")=>u?`<a class="${cls}" href="${esc(u)}" target="_blank" rel="noopener">${t}</a>`:"";
-const ph=(t,cls="btn")=>`<span class="${cls}" aria-disabled="true" title="Placeholder: add your real URL in SITE at the top of the script">${t} (add URL)</span>`;
-const B="#6CB4FF",S="#141b2d",E="#3f5a85";
-const tree=(x,y)=>`<g stroke="${B}" stroke-opacity=".7" fill="${S}"><path fill="none" d="M${x} ${y}L${x-14} ${y+22}M${x} ${y}L${x+14} ${y+22}M${x-14} ${y+22}L${x-22} ${y+44}M${x-14} ${y+22}L${x-6} ${y+44}M${x+14} ${y+22}L${x+6} ${y+44}M${x+14} ${y+22}L${x+22} ${y+44}"/>${[[0,0],[-14,22],[14,22],[-22,44],[-6,44],[6,44],[22,44]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="4"/>`).join("")}</g>`;
-const bars=(n,x0,dx,cy,amp,k)=>Array.from({length:n},(_,i)=>{const h=4+Math.abs(Math.sin(i*k))*amp;return `<rect x="${x0+i*dx}" y="${cy-h}" width="5" height="${2*h}" rx="2.5" fill="${B}" opacity=".75"/>`}).join("");
-/* Illustrations only (not screenshots): concept art for each project's function. Set cover:"image.png" on a project to use a real image instead. */
-const ART={
-"car-insurance-claim-prediction":()=>`<rect x="22" y="64" width="62" height="96" rx="6" fill="${S}" stroke="${E}"/><path d="M22 88h62M22 112h62M22 136h62M53 64v96" stroke="#27324a" fill="none"/><rect x="22" y="64" width="62" height="24" rx="6" fill="${B}" opacity=".25"/><path class="fl" d="M92 112h42" stroke="${B}" fill="none"/>${tree(165,66)}${tree(215,66)}${tree(265,66)}<path class="fl" d="M290 112h16" stroke="${B}" fill="none"/><path d="M310 140A40 40 0 0 1 390 140" stroke="#27324a" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M310 140A40 40 0 0 1 381 114" stroke="${B}" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="350" cy="140" r="5" fill="${B}"/><path d="M350 140l18-22" stroke="${B}" stroke-width="3" stroke-linecap="round"/>`,
-"aurabeat":()=>`${[0,1,2].map(i=>`<circle class="pu" cx="250" cy="112" r="${62+i*20}" fill="none" stroke="${B}" stroke-opacity="${.55-i*.15}" style="animation-delay:${i*.5}s"/>`).join("")}<rect x="232" y="40" width="36" height="32" rx="6" fill="#1a2338"/><rect x="232" y="152" width="36" height="32" rx="6" fill="#1a2338"/><rect x="212" y="68" width="76" height="90" rx="20" fill="${S}" stroke="${B}" stroke-width="2"/><path d="M232 128q18-40 36-8" stroke="${B}" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="268" cy="120" r="4" fill="${B}"/>${bars(10,24,11,112,40,1.7)}`,
-"voice-activated-ai-assistant":()=>`<rect x="40" y="82" width="26" height="46" rx="13" fill="${S}" stroke="${B}" stroke-width="2"/><path d="M30 118a23 23 0 0 0 46 0M53 141v16M41 157h24" stroke="${B}" stroke-width="2" fill="none" stroke-linecap="round"/>${bars(14,100,11,108,30,1.3)}<path class="fl" d="M258 108h14" stroke="${B}" fill="none"/><rect x="278" y="68" width="100" height="62" rx="14" fill="${S}" stroke="${B}" stroke-width="2"/><path d="M298 130l-6 16 22-16" fill="${S}" stroke="${B}" stroke-width="2" stroke-linejoin="round"/><g fill="${B}"><circle class="pu" cx="308" cy="99" r="4"/><circle class="pu" style="animation-delay:.4s" cx="328" cy="99" r="4"/><circle class="pu" style="animation-delay:.8s" cx="348" cy="99" r="4"/></g>`,
-"java-inventory-management-system":()=>`<ellipse cx="62" cy="70" rx="34" ry="11" fill="${S}" stroke="${B}" stroke-width="2"/><path d="M28 70v74a34 11 0 0 0 68 0V70M28 107a34 11 0 0 0 68 0" fill="none" stroke="${B}" stroke-width="2"/><path class="fl" d="M104 112h30" stroke="${B}" fill="none"/><rect x="140" y="62" width="130" height="100" rx="8" fill="${S}" stroke="${E}"/><rect x="140" y="62" width="130" height="24" rx="8" fill="${B}" opacity=".25"/><path d="M140 110h130M140 136h130M184 62v100M228 62v100" stroke="#27324a" fill="none"/><rect x="141" y="111" width="128" height="25" fill="${B}" opacity=".18"/><path class="fl" d="M276 112h26" stroke="${B}" fill="none"/><g fill="${S}" stroke="${B}" stroke-width="2" stroke-linejoin="round"><rect x="308" y="108" width="34" height="30" rx="3"/><rect x="346" y="108" width="34" height="30" rx="3"/><rect x="327" y="72" width="34" height="30" rx="3"/></g><path d="M313 123h24M351 123h24M332 87h24" stroke="${E}"/>`};
-function cover(p){
- if(p.cover)return `<div class="cover"><img src="${esc(p.cover)}" alt="${esc(p.title)} screenshot" loading="lazy"></div>`;
- const k=[...p.slug].reduce((a,c)=>a+c.charCodeAt(0),0);let g="";
- for(let i=0;i<9;i++)g+=`<line x1="${i*50}" y1="0" x2="${i*50}" y2="225" stroke="#22304a"/>`;
- for(let i=0;i<6;i++)g+=`<line x1="0" y1="${i*45}" x2="400" y2="${i*45}" stroke="#22304a"/>`;
- let pts="";for(let i=0;i<9;i++)pts+=`${i*50},${150-((k*(i+3)*7)%90)} `;
- return `<div class="cover"><svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${g}${(ART[p.slug]||(()=>""))()}</svg><span class="ph mono">Illustration, not a screenshot</span></div>`;
-}
-function card(p){
- const m=p.metrics?.[0];
- return `<article class="card rv"><div class="cover-w">${cover(p)}</div><div class="cbody"><span class="cat mono">${esc(p.category)}</span><h3>${esc(p.title)}</h3><p>${esc(p.short)}</p>
- <div class="tags">${p.tech.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
- ${m?`<div class="hl"><b>${esc(m.v)}</b><small>${esc(m.l)}</small></div>`:""}
- <a class="more" href="#${p.slug}" aria-label="View project: ${esc(p.title)}">View project</a></div></article>`;
-}
-$("#grid").innerHTML=sorted().map(card).join("");
-$("#skillGrid").innerHTML=Object.entries(SKILLS).map(([k,v])=>`<div class="sk"><h3>${k}</h3><div class="tags">${v.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`).join("");
-// profile links
-const gh=SITE.github?link(SITE.github,"GitHub"):ph("GitHub"),li=SITE.linkedin?link(SITE.linkedin,"LinkedIn"):ph("LinkedIn");
-const ic={github:'<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>',linkedin:'<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5v11.5z"/></svg>',mail:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'};
-$("#soc").innerHTML=[[SITE.github,"GitHub",ic.github],[SITE.linkedin,"LinkedIn",ic.linkedin],["mailto:"+SITE.email,"Email",ic.mail]].filter(x=>x[0]).map(([u,n,i])=>`<a href="${u}" aria-label="${n}"${u.startsWith("http")?' target="_blank" rel="noopener"':""}>${i}</a>`).join("");$("#contactLinks").innerHTML=gh+" "+li;
-$("#footLinks").innerHTML=[SITE.github&&link(SITE.github,"GitHub","x"),SITE.linkedin&&link(SITE.linkedin,"LinkedIn","x")].filter(Boolean).join(" · ")||"Profile links coming soon";
-if(SITE.resume){$("#resumeSlot").innerHTML=link(SITE.resume,"Resume");$("#heroResume").innerHTML=link(SITE.resume,"View resume")}
-$("#yr").textContent=new Date().getFullYear();
+            <ul class="hero-meta mono fade-in delay-4">
+              <li>Computer Science</li>
+              <li>Machine Learning minor</li>
+              <li>University of North Georgia</li>
+            </ul>
+          </div>
 
-function detail(p){
- const s=sorted(),i=s.indexOf(p),prev=s[i-1],next=s[i+1];
- const body=(p.sections||[]).map(x=>`<div class="sec"><h2>${esc(x.h)}</h2>${(x.p||[]).map(t=>`<p>${esc(t)}</p>`).join("")}${x.list?`<ul>${x.list.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`:""}${x.note?`<div class="note">${esc(x.note)}</div>`:""}${x.ph?`<div class="note" style="margin-top:12px">Placeholder: ${esc(x.ph)}</div>`:""}</div>`).join("");
- $("#detailBody").innerHTML=`<div class="crumb"><a href="#home">Home</a> / <a href="#projects">Projects</a> / ${esc(p.title)}</div>
- <span class="cat mono" style="color:var(--ac)">${esc(p.category)}</span><h1>${esc(p.title)}</h1><p class="lead" style="font-size:18px">${esc(p.short)}</p>
- <div class="tags" style="margin:20px 0">${p.tech.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
- <div class="cta">${link(p.github,"View source","btn p")}${link(p.demo,"Live demo")}${p.github?"":ph("Source code")}</div>
- <div style="margin-top:32px;border:1px solid var(--bd);border-radius:var(--r);overflow:hidden">${cover(p)}</div>
- ${p.metrics?`<div class="mets">${p.metrics.map(m=>`<div class="met"><b>${esc(m.v)}</b><small>${esc(m.l)}</small>${m.note?`<em>${esc(m.note)}</em>`:""}</div>`).join("")}</div>`:""}
- ${body}
- <div class="pn"><div>${prev?`<a href="#${prev.slug}"><small>Previous project</small>${esc(prev.title)}</a>`:""}</div><div>${next?`<a href="#${next.slug}"><small>Next project</small>${esc(next.title)}</a>`:""}</div></div>
- <p style="margin-top:32px"><a class="btn" href="#projects">Back to all projects</a></p>`;
- document.title=p.title+" | Pramit Patel";
-}
-const home=$("#home-view"),det=$("#detail");
-function route(){
- const h=decodeURIComponent(location.hash.slice(1)),p=PROJECTS.find(x=>x.slug===h);
- if(p){detail(p);home.style.display="none";det.style.display="block";scrollTo(0,0);}
- else{const was=det.style.display==="block";det.style.display="none";home.style.display="";document.title="Pramit Patel | Machine Learning and Software Engineering";
-  if(was){const el=h&&document.getElementById(h);requestAnimationFrame(()=>el?el.scrollIntoView():scrollTo(0,0));}}
- document.querySelectorAll("#navlist a").forEach(a=>a.classList.toggle("on",!p&&a.getAttribute("href")==="#"+(h||"home")));
- $("#navlist").classList.remove("open");$("#menu").setAttribute("aria-expanded","false");
-}
-addEventListener("hashchange",route);route();
-$("#menu").onclick=()=>{const o=$("#navlist").classList.toggle("open");$("#menu").setAttribute("aria-expanded",o)};
-</script>
-<script>
-const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
-// scroll spy (real)
-(function(){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&document.getElementById("detail").style.display!=="block")document.querySelectorAll("#navlist a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
-["home","projects","about","experience","skills","contact"].forEach(id=>o.observe(document.getElementById(id)))})();
-// scroll progress
-const pg=document.getElementById("prog");addEventListener("scroll",()=>{const m=document.documentElement.scrollHeight-innerHeight;pg.style.width=(m>0?scrollY/m*100:0)+"%"},{passive:true});
-// stat counters
-document.querySelectorAll("[data-to]").forEach(el=>{if(RM)return;const to=+el.dataset.to,d=+(el.dataset.d||0),s=el.dataset.s||"",set=v=>el.textContent=v.toFixed(d)+s;set(0);
- new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){o.disconnect();const t0=performance.now();(function f(t){const k=Math.min((t-t0)/1300,1);set(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}}).observe(el)});
-// reveal
-const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");rv.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll(".rv").forEach(el=>RM?el.classList.add("show"):rv.observe(el));
-// card spotlight and tilt
-document.querySelectorAll(".card").forEach(c=>{c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty("--mx",x+"px");c.style.setProperty("--my",y+"px");
- if(!RM&&e.pointerType==="mouse")c.style.transform=`perspective(900px) rotateX(${((y/r.height)-.5)*-5}deg) rotateY(${((x/r.width)-.5)*5}deg) translateY(-4px)`});
- c.addEventListener("pointerleave",()=>c.style.transform="")});
-// hero: layered neural network with signals
-(function(){const cv=document.getElementById("net"),x=cv.getContext("2d");let W,H,nodes=[],edges=[],sig=[],dpr=Math.min(devicePixelRatio||1,2),mx=-1e3,my=-1e3,vis=true;
-const L=[4,7,8,6,3];
-function build(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);nodes=[];edges=[];
- const left=W<820?W*.12:W*.42,right=W*.95;
- L.forEach((n,i)=>{for(let j=0;j<n;j++){nodes.push({l:i,x:left+(right-left)*(i/(L.length-1)),y:H*.12+(H*.76)*((j+.5)/n)+(i%2?14:-14),p:Math.random()*6.28})}});
- nodes.forEach((a,i)=>nodes.forEach((b,k)=>{if(b.l===a.l+1&&Math.random()<.55)edges.push([i,k])}));}
-function frame(t){x.clearRect(0,0,W,H);
- x.lineWidth=1;edges.forEach(([a,b])=>{const A=nodes[a],B=nodes[b];x.strokeStyle="rgba(108,180,255,.13)";x.beginPath();x.moveTo(A.x,A.y);x.lineTo(B.x,B.y);x.stroke()});
- if(!RM&&sig.length<26&&Math.random()<.18){const e=edges[Math.random()*edges.length|0];if(e)sig.push({e,t:0,s:.006+Math.random()*.008})}
- sig=sig.filter(s=>{s.t+=s.s;if(s.t>=1)return false;const A=nodes[s.e[0]],B=nodes[s.e[1]],px=A.x+(B.x-A.x)*s.t,py=A.y+(B.y-A.y)*s.t;
-  const g=x.createRadialGradient(px,py,0,px,py,9);g.addColorStop(0,"rgba(108,180,255,.9)");g.addColorStop(1,"rgba(108,180,255,0)");x.fillStyle=g;x.beginPath();x.arc(px,py,9,0,6.28);x.fill();return true});
- nodes.forEach(n=>{const d=Math.hypot(n.x-mx,n.y-my),near=d<110?1-d/110:0,r=3+Math.sin(t/900+n.p)*.6+near*3;
-  x.fillStyle="#141b2d";x.strokeStyle=near>0?"#6CB4FF":"rgba(108,180,255,.55)";x.lineWidth=1.4;x.beginPath();x.arc(n.x,n.y,r,0,6.28);x.fill();x.stroke()});
- if(!RM&&vis)requestAnimationFrame(frame)}
-build();addEventListener("resize",()=>{build();if(RM)frame(0)});
-cv.parentElement.addEventListener("pointermove",e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
-new IntersectionObserver(e=>{const v=e[0].isIntersecting;if(v&&!vis){vis=true;requestAnimationFrame(frame)}vis=v}).observe(cv);
-requestAnimationFrame(frame)})();
-</script>
+          <!-- To change your photo, replace assets/profile.png (a square image works best) -->
+          <div class="hero-photo fade-in delay-2">
+            <svg class="orbit" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width=".4" stroke-dasharray="1.5 2.5"/><circle cx="50" cy="1" r="1.7" fill="currentColor"/></svg>
+            <svg class="orbit orbit-slow" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-opacity=".2" stroke-width=".4"/><circle cx="94" cy="50" r="1.3" fill="currentColor"/><circle cx="28" cy="88" r="1" fill="currentColor" opacity=".6"/></svg>
+            <img src="assets/profile.png" alt="Portrait of Pramit Patel wearing glasses and a navy blazer" width="290" height="289">
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STATS ================= -->
+      <!-- The number is the text inside <strong>. data-count-to must match it (it is
+           the number the count-up animation stops at). -->
+      <section class="stats" aria-label="Quick facts">
+        <div class="container stats-grid reveal">
+          <p class="stat"><strong class="stat-number" data-count-to="4.0" data-decimals="1">4.0</strong> <span class="stat-label">GPA at UNG</span></p>
+          <p class="stat"><strong class="stat-number" data-count-to="65" data-suffix="+">65+</strong> <span class="stat-label">credit hours completed</span></p>
+        </div>
+      </section>
+
+      <!-- ================= PROJECTS ================= -->
+      <!-- ADD NEW PROJECTS IN THE PROJECT DATA SECTION: open js/projects-data.js.
+           The cards below are created from that list automatically. -->
+      <section id="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <p class="lead">Work across applied AI, machine learning, accessibility, and voice interfaces, including two hackathon builds from October 2026.</p>
+          <div class="project-grid" id="project-grid"></div>
+          <noscript><p class="lead">Turn on JavaScript to see the project cards, or browse my code on <a href="https://github.com/pramittpatel">GitHub</a>.</p></noscript>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+      <section class="section-alt" id="about">
+        <div class="container about-grid reveal">
+          <div>
+            <h2>About</h2>
+            <!-- EDIT YOUR ABOUT-ME TEXT HERE -->
+            <p class="lead">I’m a Computer Science student at the University of North Georgia, minoring in Machine Learning. I like taking a problem from raw data and a first idea through to implementation, experiments, and evaluation.</p>
+            <p class="lead">I’m a member of the UNG AI Lab and the Software Engineering Club, and I’m looking for AI engineering, machine learning, and data science internships.</p>
+          </div>
+
+          <!-- ADD OR UPDATE YOUR EDUCATION HERE -->
+          <dl class="fact-grid">
+            <div class="fact"><dt>B.S.</dt><dd>Computer Science</dd></div>
+            <div class="fact"><dt>Minor</dt><dd>Machine Learning</dd></div>
+            <div class="fact"><dt>4.0</dt><dd>GPA, 65+ credit hours</dd></div>
+            <div class="fact"><dt>May 2028</dt><dd>Expected graduation</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ================= EXPERIENCE ================= -->
+      <section id="experience">
+        <div class="container reveal">
+          <h2 class="section-title">Experience</h2>
+
+          <!-- UPDATE YOUR EXPERIENCE HERE: copy one <article class="job"> block to add a role. Newest first. -->
+          <div class="timeline">
+            <article class="job">
+              <p class="job-dates">October 2026 to present</p>
+              <h3>AI Lab Member</h3>
+              <p class="job-place">University of North Georgia, AI Lab · Dahlonega, GA</p>
+              <ul>
+                <li>Perform exploratory data analysis on 3+ research datasets and train predictive models in Python with faculty and 5+ lab peers.</li>
+                <li>Run 10+ Scikit-learn and PyTorch experiments, comparing classification and regression metrics to pick the best models.</li>
+                <li>Document experiment results and take part in weekly peer code reviews to refine data preprocessing and model stability.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <p class="job-dates">June 2026 to present</p>
+              <h3>Software Engineering Club Member</h3>
+              <p class="job-place">University of North Georgia, Software Engineering Club · Dahlonega, GA</p>
+              <ul>
+                <li>Solve and optimize 50+ algorithmic problems in Python and Java, analyzing runtime complexity (Big-O) and memory use.</li>
+                <li>Join bi-weekly coding sessions on object-oriented design and modular architecture, with peer code reviews.</li>
+                <li>Use Git and GitHub on every team project for version control, clean branching, and merge-conflict resolution.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <p class="job-dates">March 2025 to present</p>
+              <h3>Customer Service Associate</h3>
+              <p class="job-place">RaceTrac · Cumming, GA</p>
+              <ul>
+                <li>Process 200+ point-of-sale transactions daily with 99.9% accuracy during peak 8-hour shifts.</li>
+                <li>Track and restock 500+ retail items, keeping shelves rotated with zero stockouts.</li>
+                <li>Work with 6+ associates per shift to resolve customer questions and keep daily operations running smoothly.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SKILLS ================= -->
+      <section class="section-alt" id="skills">
+        <div class="container reveal">
+          <h2 class="section-title">Skills</h2>
+
+          <!-- UPDATE YOUR SKILLS HERE: add or remove <li> items, or copy a whole skill-group block -->
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3>Machine learning and AI</h3>
+              <ul class="tag-list">
+                <li>PyTorch</li><li>TensorFlow</li><li>Scikit-learn</li><li>Feature engineering</li><li>Model training and evaluation</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Data</h3>
+              <ul class="tag-list">
+                <li>Pandas</li><li>NumPy</li><li>Snowflake</li><li>Data cleaning</li><li>Exploratory data analysis</li><li>Matplotlib</li><li>Seaborn</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Programming and web</h3>
+              <ul class="tag-list">
+                <li>Python</li><li>Java</li><li>SQL</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>REST APIs</li><li>HTML</li><li>CSS</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Tools and practices</h3>
+              <ul class="tag-list">
+                <li>Git</li><li>GitHub</li><li>VS Code</li><li>Anaconda</li><li>Streamlit</li><li>Object-oriented programming</li><li>Data structures and algorithms</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+      <section class="contact" id="contact">
+        <div class="container reveal">
+          <h2>Have an interesting problem to solve?</h2>
+          <p class="lead">I’m interested in AI and ML opportunities, software engineering internships, research, and collaborations on useful technology.</p>
+
+          <!-- UPDATE YOUR CONTACT LINKS HERE -->
+          <div class="button-row">
+            <a class="btn btn-primary" href="mailto:pramittejaspatel@icloud.com">pramittejaspatel@icloud.com</a>
+            <a class="btn" href="https://github.com/pramittpatel" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/pramit-patel-91a016389/" target="_blank" rel="noopener">LinkedIn</a>
+            <!-- REPLACE assets/resume.pdf TO UPDATE YOUR RESUME ("download" saves the file instead of opening it) -->
+            <a class="btn" href="assets/resume.pdf" download="Pramit_Patel_Resume.pdf">Download resume (PDF)</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- A single project's page. js/main.js fills this in when the address ends in #project-id. -->
+    <div class="project-view" id="project-view" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="footer-year">2026</span> Pramit Patel</span>
+      <a href="#home">Back to top</a>
+    </div>
+  </footer>
+
+
+  <!-- ================= TEMPLATES =================
+       These are not shown on the page by themselves. js/main.js copies them
+       and fills in each project's details from js/projects-data.js.
+       Change the HTML here to change the layout of every project card or page. -->
+
+  <!-- One project card on the home page -->
+  <template id="project-card-template">
+    <article class="project-card reveal">
+      <div class="project-cover"><img src="" alt="" loading="lazy"></div>
+      <div class="project-card-body">
+        <p class="project-category"></p>
+        <h3 class="project-title"></h3>
+        <p class="project-event"></p>
+        <p class="project-description"></p>
+        <ul class="tag-list" aria-label="Technologies used"></ul>
+        <p class="project-highlight"><strong></strong> <span></span></p>
+        <a class="project-link" href="#">View project<span class="visually-hidden"></span></a>
+      </div>
+    </article>
+  </template>
+
+  <!-- A full project page -->
+  <template id="project-detail-template">
+    <article class="container project-detail">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#home">Home</a> / <a href="#projects">Projects</a> / <span class="breadcrumb-current"></span>
+      </nav>
+      <p class="project-category"></p>
+      <h1 class="project-detail-title"></h1>
+      <p class="project-event"></p>
+      <p class="lead project-description"></p>
+      <ul class="tag-list" aria-label="Technologies used"></ul>
+      <div class="button-row project-links"></div>
+      <div class="project-detail-cover"><img src="" alt=""></div>
+      <div class="highlight-grid"></div>
+      <div class="project-sections"></div>
+      <nav class="prev-next" aria-label="More projects"></nav>
+      <p class="back-link"><a class="btn" href="#projects">Back to all projects</a></p>
+    </article>
+  </template>
 </body>
 </html>

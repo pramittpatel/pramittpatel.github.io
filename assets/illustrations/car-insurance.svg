@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img">
+<title>Illustration: Data table flowing into a forest of decision trees and a gauge</title>
+<style>
+  .flow { stroke-dasharray: 4 5; animation: flow 1.6s linear infinite; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes flow { to { stroke-dashoffset: -18; } }
+  @keyframes pulse { 50% { opacity: .3; } }
+  @media (prefers-reduced-motion: reduce) { .flow, .pulse { animation: none; } }
+</style>
+<!-- Background and grid -->
+<rect width="400" height="225" fill="#0f1626"/>
+<g stroke="#22304a"><line x1="0" y1="0" x2="0" y2="225"/><line x1="50" y1="0" x2="50" y2="225"/><line x1="100" y1="0" x2="100" y2="225"/><line x1="150" y1="0" x2="150" y2="225"/><line x1="200" y1="0" x2="200" y2="225"/><line x1="250" y1="0" x2="250" y2="225"/><line x1="300" y1="0" x2="300" y2="225"/><line x1="350" y1="0" x2="350" y2="225"/><line x1="400" y1="0" x2="400" y2="225"/><line x1="0" y1="0" x2="400" y2="0"/><line x1="0" y1="45" x2="400" y2="45"/><line x1="0" y1="90" x2="400" y2="90"/><line x1="0" y1="135" x2="400" y2="135"/><line x1="0" y1="180" x2="400" y2="180"/><line x1="0" y1="225" x2="400" y2="225"/></g>
+<!-- Drawing -->
+<rect x="22" y="64" width="62" height="96" rx="6" fill="#141b2d" stroke="#3f5a85"/><path d="M22 88h62M22 112h62M22 136h62M53 64v96" stroke="#27324a" fill="none"/><rect x="22" y="64" width="62" height="24" rx="6" fill="#6CB4FF" opacity=".25"/>
+<path class="flow" d="M92 112h42" stroke="#6CB4FF" fill="none"/>
+<g stroke="#6CB4FF" stroke-opacity=".7" fill="#141b2d"><path fill="none" d="M165 66L151 88M165 66L179 88M151 88L143 110M151 88L159 110M179 88L171 110M179 88L187 110"/><circle cx="165" cy="66" r="4"/><circle cx="151" cy="88" r="4"/><circle cx="179" cy="88" r="4"/><circle cx="143" cy="110" r="4"/><circle cx="159" cy="110" r="4"/><circle cx="171" cy="110" r="4"/><circle cx="187" cy="110" r="4"/></g>
+<g stroke="#6CB4FF" stroke-opacity=".7" fill="#141b2d"><path fill="none" d="M215 66L201 88M215 66L229 88M201 88L193 110M201 88L209 110M229 88L221 110M229 88L237 110"/><circle cx="215" cy="66" r="4"/><circle cx="201" cy="88" r="4"/><circle cx="229" cy="88" r="4"/><circle cx="193" cy="110" r="4"/><circle cx="209" cy="110" r="4"/><circle cx="221" cy="110" r="4"/><circle cx="237" cy="110" r="4"/></g>
+<g stroke="#6CB4FF" stroke-opacity=".7" fill="#141b2d"><path fill="none" d="M265 66L251 88M265 66L279 88M251 88L243 110M251 88L259 110M279 88L271 110M279 88L287 110"/><circle cx="265" cy="66" r="4"/><circle cx="251" cy="88" r="4"/><circle cx="279" cy="88" r="4"/><circle cx="243" cy="110" r="4"/><circle cx="259" cy="110" r="4"/><circle cx="271" cy="110" r="4"/><circle cx="287" cy="110" r="4"/></g>
+<path class="flow" d="M290 112h16" stroke="#6CB4FF" fill="none"/>
+<path d="M310 140A40 40 0 0 1 390 140" stroke="#27324a" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M310 140A40 40 0 0 1 381 114" stroke="#6CB4FF" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="350" cy="140" r="5" fill="#6CB4FF"/><path d="M350 140l18-22" stroke="#6CB4FF" stroke-width="3" stroke-linecap="round"/>
+</svg>
