@@ -471,7 +471,11 @@ section {
   grid-area: photo;
   position: relative;
   justify-self: center;
-  width: min(100%, 410px);
+  /* Line the photo up with the top of the heading. If it were centered on the
+     whole text column instead, it would slide below the screen on short windows. */
+  align-self: start;
+  /* At most 410px wide, and never taller than the visible screen */
+  width: min(100%, 410px, calc(100svh - 160px));
   aspect-ratio: 1;
   color: var(--color-accent); /* the orbit rings use this color */
 }
@@ -522,7 +526,9 @@ section {
     letter-spacing: -0.02em;
   }
 
+  /* Here the photo sits next to the heading only, so center it on the heading */
   .hero-photo {
+    align-self: center;
     width: 100%;
   }
 }
